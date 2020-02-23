@@ -1,0 +1,115 @@
+html,
+body {
+    margin: 0px;
+    height: 100%;
+}
+
+header {
+    height: 100px;
+    background-color: orange;
+}
+
+footer {
+    height: 100px;
+    background-color: orange;
+}
+
+.header-site-name {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding-top: 20px;
+    margin-left: 10px;
+    width: 700px;
+    overflow: hidden;
+}
+
+.page-content {
+    min-height: calc(100vh - 100px - 100px);
+}
+
+.input {
+    display: block;
+    margin-top: 10px;
+    width: calc(100% - 20px);
+    margin-left: 10px;
+
+}
+
+.registration-form {
+    background-color: aquamarine;
+    display: block;
+    position: relative;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.register-button {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.auth-badge {
+    display: inline-block;
+    background-color: red;
+    height: 80px;
+    margin-top: 10px;
+    margin-right: 200px;
+    position: absolute;
+    right: 0;
+}
+
+.popup-menu {
+    display: inline-block;
+    margin-right: 10px;
+    position: absolute;
+    right: 0;
+}
+
+.popup-menu-button {
+    height: 100px;
+    width: 100px;
+    text-align: center;
+}
+
+.popup-menu-button:hover,
+.popup-menu-item:hover {
+    background-color: #ffbb00;
+    cursor: pointer;
+}
+
+.popup-menu-button-text {
+    font-size: 25px;
+    line-height: 100px;
+    cursor: pointer;
+}
+
+.popup-menu-content {
+    display: none;
+}
+
+.popup-menu-item {
+    background-color: orange;
+    height: 50px;
+    width: 100px;
+    text-align: center;
+}
+
+.popup-menu:hover .popup-menu-content {
+    display: block;
+}
+
+.popup-menu-item-content {
+    font-size: 25px;
+    line-height: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.popup-menu-item-content:any-link {
+    text-decoration: none;
+}
