@@ -24,7 +24,7 @@ function onLogin() {
 					element.isAuth = true;
 					element = JSON.stringify(element);
 					localStorage.setItem(key, element);
-					let newLocation = window.location.href.replace('/auth/', '/');
+					let newLocation = window.location.href.replace('/login/', '/');
 					newLocation = newLocation.split('?')[0]
 					window.location.href = newLocation;
 					return false;
