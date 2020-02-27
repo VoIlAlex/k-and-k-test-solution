@@ -1,20 +1,63 @@
-function onLoad() {
-	let authBadgeContainer = document.getElementById("auth-badge");
+const TITLE_FULL = "TAPOC (technologically approved picture of code)";
+const TITLE_SHORT = "TAPOC";
 
-	// Find an authenticated user
-	let authenticatedUser = null;
+function defaultOnLoad() {
+	loadUserBadge();
+	adjustTitle();
+}
+
+function mainPageOnLoad() {
+	defaultOnLoad();
+	addAuthenticatedButtons();
+}
+
+function getAuthenticatedUser() {
 	for (const key in localStorage) {
-		if (localStorage.hasOwnProperty(key)) {
-			let element = localStorage.getItem(key);
-			element = JSON.parse(element);
+		element = localStorage.getItem(key);
+		element = JSON.parse(element);
+		try {
 			if (element.isAuth === true) {
-				authenticatedUser = element;
-				break;
+				return element;
 			}
+		} catch (e) {
+			continue;
 		}
 	}
+	return null;
+}
+
+function loadUserBadge() {
+	let authBadgeContainer = document.getElementById("header-user-badge");
+	let authenticatedUser = getAuthenticatedUser();
 	if (authenticatedUser !== null) {
-		authBadgeContainer.innerHTML = authenticatedUser.email;
-		document.getElementById('popup-menu-item-logout').style.display = "inline-block";
+		authBadgeContainer.innerHTML = authenticatedUser.email[0];
+		authBadgeContainer.style.display = "block";
+		authBadgeContainer.title = authenticatedUser.email;
 	}
+}
+
+function addAuthenticatedButtons() {
+	let logoutButton = document.getElementById('popup-menu-item-logout');
+	if (logoutButton != null) {
+		logoutButton.style.display = "inline-block";
+	}
+}
+
+function adjustTitle() {
+	const title = document.getElementById('header-site-name');
+	const titleText = title.innerHTML;
+	const fullTitleSize = 800;
+	const additionalSize = 200;
+	if (window.innerWidth < fullTitleSize + additionalSize && titleText != TITLE_SHORT) {
+		title.innerHTML = TITLE_SHORT;
+	} else if (window.innerWidth > fullTitleSize + additionalSize && titleText != TITLE_FULL) {
+		title.innerHTML = TITLE_FULL;
+	}
+}
+
+function relocateTo(currentPath, targetPath = "") {
+	//TODO: figure out how ot import modules
+	let newLocation = window.location.href.replace('/' + currentPath + '/', '/' + targetPath + '/');
+	newLocation = newLocation.split('?')[0]
+	window.location.href = newLocation;
 }

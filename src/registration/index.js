@@ -1,3 +1,10 @@
+function relocateTo(currentPath, targetPath = "") {
+	//TODO: figure out how ot import modules
+	let newLocation = window.location.href.replace('/' + currentPath + '/', '/' + targetPath + '/');
+	newLocation = newLocation.split('?')[0];
+	window.location.href = newLocation;
+}
+
 function onRegister() {
 	let regForm = document.getElementById("registration-form");
 
@@ -45,9 +52,7 @@ function onRegister() {
 	userObjectJSON = JSON.stringify(userObject)
 
 	localStorage.setItem(email, userObjectJSON);
-	let newLocation = window.location.href.replace('/registration/', '/');
-	newLocation = newLocation.split('?')[0]
-	window.location.href = newLocation;
+	relocateTo('registration', 'successfulRegistration');
 
 	return false;
 }

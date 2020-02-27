@@ -1,0 +1,189 @@
+/*
+
+    HEADER
+
+*/
+
+.header-site-name {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding-top: 20px;
+    margin-left: 100px;
+    width: calc(100% - 100px - 100px);
+    overflow: hidden;
+    text-align: center;
+}
+
+header {
+    height: 100px;
+    background-color: rgb(26, 39, 65);
+    color: white;
+}
+
+.header-user-badge {
+    display: inline-block;
+    background-color: white;
+    font-size: 50px;
+    height: 80px;
+    margin-top: 10px;
+    margin-left: 10px;
+    position: absolute;
+    width: 80px;
+    text-align: center;
+    line-height: 80px;
+    left: 0;
+    border-radius: 40px;
+    color: black;
+}
+
+.popup-menu {
+    display: inline-block;
+    margin-right: 10px;
+    position: absolute;
+    right: 0;
+}
+
+.popup-menu-button {
+    height: 100px;
+    width: 100px;
+    text-align: center;
+}
+
+.popup-menu-button:hover,
+.popup-menu-item:hover {
+    background-color: rgb(41, 58, 92);
+    cursor: pointer;
+}
+
+.popup-menu-button-text {
+    font-size: 25px;
+    line-height: 100px;
+    cursor: pointer;
+}
+
+.popup-menu-content {
+    display: none;
+}
+
+.popup-menu-item {
+    background-color: rgb(64, 80, 114);
+    height: 50px;
+    width: 100px;
+    text-align: center;
+    border-width: 1px;
+    border-color: white;
+    border-style: solid;
+}
+
+.popup-menu:hover .popup-menu-content {
+    display: block;
+}
+
+.popup-menu-item-content {
+    font-size: 25px;
+    line-height: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    border-color: white;
+    border-width: 1px;
+}
+
+.popup-menu-item-content:any-link {
+    text-decoration: none;
+}
+
+
+
+/*
+
+    BODY
+
+*/
+
+body {
+    margin: 0px;
+    height: 100%;
+}
+
+.page-content {
+    min-height: calc(100vh - 100px - 100px);
+}
+
+.page-content-internals {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* .registration-form {
+    background-color: aquamarine;
+    display: block;
+    position: relative;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.register-button {
+    margin-left: 10px;
+    margin-top: 10px;
+} */
+
+.container {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-family: Cambria,
+        Cochin,
+        Georgia,
+        Times,
+        'Times New Roman',
+        serif;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.8);
+}
+
+
+
+/*
+
+    FOOTER
+
+*/
+
+
+footer {
+    height: 100px;
+    background-color: rgb(26, 39, 65);
+}
+
+
+/*
+
+    OTHER
+
+*/
+
+
+.input {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}

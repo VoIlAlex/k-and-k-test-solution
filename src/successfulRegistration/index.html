@@ -28,51 +28,19 @@
       </div>
     </header>
     <div class="page-content">
-      <form
-        action=""
-        method="get"
-        class="container form-component"
-        onsubmit="return onRegister()"
-        id="registration-form"
-      >
-        <h1>Registration</h1>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          class="input form-input"
-          placeholder="Email"
-        />
-        <input
-          type="text"
-          name="first-name"
-          id="first-name"
-          class="input form-input"
-          placeholder="First name"
-        />
-        <input
-          type="text"
-          name="last-name"
-          id="last-name"
-          class="input form-input"
-          placeholder="Last name"
-        />
-        <input
-          type="password"
-          name="password"
-          id="password"
-          class="input form-input"
-          placeholder="Password"
-        />
-        <input
-          type="password"
-          name="password-again"
-          id="password-again"
-          class="input form-input"
-          placeholder="Password repetition"
-        />
-        <input type="submit" value="Register" class="form-button" />
-      </form>
+      <div class="page-content-internals">
+        <div class="container successful-registration-component">
+          <div class="successful-registration-text">
+            Successful registration!
+          </div>
+          <div
+            class="main-page-button"
+            onclick="relocateTo('successfulRegistration', '')"
+          >
+            Main page
+          </div>
+        </div>
+      </div>
     </div>
     <footer></footer>
   </body>

@@ -36,7 +36,7 @@ footer {
 
 }
 
-.login-form {
+/* .login-form {
     background-color: aquamarine;
     display: block;
     position: relative;
@@ -50,7 +50,7 @@ footer {
 .login-button {
     margin-left: 10px;
     margin-top: 10px;
-}
+} */
 
 .auth-badge {
     display: inline-block;

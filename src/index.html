@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="style/common.css" />
     <title>TAPOC | Home</title>
     <script src="./index.js"></script>
   </head>
-  <body onload="onLoad()">
+  <body onload="mainPageOnLoad()" onresize="adjustTitle()">
     <header>
-      <h1 class="header-site-name">
+      <div
+        class="header-user-badge"
+        id="header-user-badge"
+        style="display: none;"
+      ></div>
+      <h1 class="header-site-name" id="header-site-name">
         TAPOC (technologically approved picture of code)
       </h1>
-      <div class="auth-badge" id="auth-badge"></div>
       <div class="popup-menu">
         <div class="popup-menu-button">
           <span class="popup-menu-button-text">Menu</span>
@@ -40,47 +45,51 @@
       </div>
     </header>
     <div class="page-content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate
-      dolor ac elit pretium, at rutrum turpis sollicitudin. Nunc ac urna eget
-      quam fringilla iaculis. Nunc velit odio, tempus sit amet pharetra in,
-      efficitur ultricies nulla. Donec fringilla, arcu ut gravida sodales, velit
-      metus aliquam magna, quis finibus metus ipsum et purus. Maecenas pulvinar
-      sagittis tincidunt. Curabitur pharetra lobortis augue ac lacinia. Aliquam
-      venenatis sem eget est mattis placerat. Aenean fermentum tincidunt enim,
-      eget tincidunt diam egestas eget. Vivamus sit amet ornare purus. Nulla eu
-      luctus sapien. In ut nunc eleifend, finibus ligula at, dignissim augue.
-      Vivamus at ante eget libero convallis hendrerit a eget diam. Nunc a ex
-      orci. Integer dignissim urna sit amet odio bibendum, eget porta ligula
-      ultricies. Duis vestibulum tempor urna nec accumsan. Sed semper urna eget
-      turpis laoreet, vitae volutpat mi condimentum. Nullam eget metus in est
-      ultrices efficitur. Fusce sit amet tellus vitae sapien volutpat posuere eu
-      ac tellus. Aliquam quis odio mattis, bibendum augue sit amet, congue nisl.
-      Nunc rhoncus mauris vel velit semper bibendum. Phasellus tincidunt turpis
-      vitae nibh volutpat, vestibulum pulvinar ligula auctor. Curabitur at enim
-      in dolor porttitor vestibulum id sit amet lectus. Mauris faucibus, lacus
-      at tempus mollis, urna mi faucibus ipsum, sit amet dignissim purus odio at
-      metus. Pellentesque dolor felis, laoreet non accumsan eu, tincidunt
-      pulvinar nibh. Vivamus in tellus nec urna pretium efficitur. Nullam eros
-      arcu, tincidunt ac molestie viverra, fermentum sed neque. Orci varius
-      natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      Donec nibh mauris, dapibus in aliquam non, gravida sit amet massa. Nulla
-      ut ex in nunc pretium rutrum ut vitae quam. Vivamus vel ligula ut massa
-      varius malesuada. Proin non urna et risus rutrum aliquam vel interdum
-      enim. Aliquam nisi augue, pretium et fringilla non, dapibus nec diam.
-      Fusce interdum enim dui, in vestibulum turpis vulputate nec. Vestibulum
-      nunc sapien, facilisis eget luctus gravida, scelerisque non metus. Etiam
-      dapibus venenatis ipsum, nec elementum leo. In hac habitasse platea
-      dictumst. Morbi tincidunt malesuada orci non suscipit. Nam et semper
-      neque. Nullam ut rhoncus tellus. Mauris sed ipsum vel turpis tincidunt
-      tincidunt ac quis ante. Sed sagittis id lectus a fringilla. Nulla
-      porttitor porta lacus malesuada rhoncus. Pellentesque convallis sem at mi
-      tempor commodo. Fusce imperdiet, mi a auctor vulputate, felis tellus
-      interdum sapien, ac venenatis nulla lacus in quam. Phasellus sit amet urna
-      nunc. Donec auctor aliquam diam, nec varius enim aliquam sit amet. Sed at
-      ornare sapien, et ullamcorper massa. Quisque venenatis eu nibh ac
-      consequat. Nunc vel est egestas, mollis erat eget, aliquam nisi. Class
-      aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-      himenaeos. Duis quis purus sed ante dignissim ullamcorper.
+      <div class="page-content-internals">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate
+        dolor ac elit prepage-content-internalstium, at rutrum turpis
+        sollicitudin. Nunc ac urna eget quam fringilla iaculis. Nunc velit odio,
+        tempus sit amet pharetra in, efficitur ultricies nulla. Donec fringilla,
+        arcu ut gravida sodales, velit metus aliquam magna, quis finibus metus
+        ipsum et purus. Maecenas pulvinar sagittis tincidunt. Curabitur pharetra
+        lobortis augue ac lacinia. Aliquam venenatis sem eget est mattis
+        placerat. Aenean fermentum tincidunt enim, eget tincidunt diam egestas
+        eget. Vivamus sit amet ornare purus. Nulla eu luctus sapien. In ut nunc
+        eleifend, finibus ligula at, dignissim augue. Vivamus at ante eget
+        libero convallis hendrerit a eget diam. Nunc a ex orci. Integer
+        dignissim urna sit amet odio bibendum, eget porta ligula ultricies. Duis
+        vestibulum tempor urna nec accumsan. Sed semper urna eget turpis
+        laoreet, vitae volutpat mi condimentum. Nullam eget metus in est
+        ultrices efficitur. Fusce sit amet tellus vitae sapien volutpat posuere
+        eu ac tellus. Aliquam quis odio mattis, bibendum augue sit amet, congue
+        nisl. Nunc rhoncus mauris vel velit semper bibendum. Phasellus tincidunt
+        turpis vitae nibh volutpat, vestibulum pulvinar ligula auctor. Curabitur
+        at enim in dolor porttitor vestibulum id sit amet lectus. Mauris
+        faucibus, lacus at tempus mollis, urna mi faucibus ipsum, sit amet
+        dignissim purus odio at metus. Pellentesque dolor felis, laoreet non
+        accumsan eu, tincidunt pulvinar nibh. Vivamus in tellus nec urna pretium
+        efficitur. Nullam eros arcu, tincidunt ac molestie viverra, fermentum
+        sed neque. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Donec nibh mauris, dapibus in aliquam
+        non, gravida sit amet massa. Nulla ut ex in nunc pretium rutrum ut vitae
+        quam. Vivamus vel ligula ut massa varius malesuada. Proin non urna et
+        risus rutrum aliquam vel interdum enim. Aliquam nisi augue, pretium et
+        fringilla non, dapibus nec diam. Fusce interdum enim dui, in vestibulum
+        turpis vulputate nec. Vestibulum nunc sapien, facilisis eget luctus
+        gravida, scelerisque non metus. Etiam dapibus venenatis ipsum, nec
+        elementum leo. In hac habitasse platea dictumst. Morbi tincidunt
+        malesuada orci non suscipit. Nam et semper neque. Nullam ut rhoncus
+        tellus. Mauris sed ipsum vel turpis tincidunt tincidunt ac quis ante.
+        Sed sagittis id lectus a fringilla. Nulla porttitor porta lacus
+        malesuada rhoncus. Pellentesque convallis sem at mi tempor commodo.
+        Fusce imperdiet, mi a auctor vulputate, felis tellus interdum sapien, ac
+        venenatis nulla lacus in quam. Phasellus sit amet urna nunc. Donec
+        auctor aliquam diam, nec varius enim aliquam sit amet. Sed at ornare
+        sapien, et ullamcorper massa. Quisque venenatis eu nibh ac consequat.
+        Nunc vel est egestas, mollis erat eget, aliquam nisi. Class aptent
+        taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+        himenaeos. Duis quis purus sed ante dignissim ullamcorper.
+      </div>
     </div>
     <footer></footer>
   </body>

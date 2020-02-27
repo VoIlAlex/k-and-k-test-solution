@@ -20,12 +20,25 @@ footer {
     margin: 0;
     padding-top: 20px;
     margin-left: 10px;
-    width: 700px;
+    width: calc(100% - 100px);
     overflow: hidden;
+    text-align: center;
 }
 
 .page-content {
     min-height: calc(100vh - 100px - 100px);
+
+}
+
+.page-content-internals {
+    max-width: 1028px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .input {
@@ -36,7 +49,7 @@ footer {
 
 }
 
-.registration-form {
+/* .registration-form {
     background-color: aquamarine;
     display: block;
     position: relative;
@@ -50,7 +63,7 @@ footer {
 .register-button {
     margin-left: 10px;
     margin-top: 10px;
-}
+} */
 
 .auth-badge {
     display: inline-block;
@@ -107,7 +120,7 @@ footer {
     line-height: 50px;
     cursor: pointer;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .popup-menu-item-content:any-link {
