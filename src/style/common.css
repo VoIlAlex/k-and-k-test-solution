@@ -85,14 +85,12 @@ header {
     line-height: 50px;
     cursor: pointer;
     text-decoration: none;
-    border-color: white;
-    border-width: 1px;
+    color: white;
 }
 
 .popup-menu-item-content:any-link {
     text-decoration: none;
 }
-
 
 
 /*

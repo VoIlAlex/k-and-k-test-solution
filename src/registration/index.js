@@ -5,6 +5,21 @@ function relocateTo(currentPath, targetPath = "") {
 	window.location.href = newLocation;
 }
 
+function logout() {
+	for (const key in localStorage) {
+		if (localStorage.hasOwnProperty(key)) {
+			let element = localStorage.getItem(key);
+			element = JSON.parse(element);
+			if (element.isAuth === true) {
+				element.isAuth = false;
+				element = JSON.stringify(element)
+				localStorage.setItem(key, element)
+				break;
+			}
+		}
+	}
+}
+
 function onRegister() {
 	let regForm = document.getElementById("registration-form");
 
@@ -52,6 +67,7 @@ function onRegister() {
 	userObjectJSON = JSON.stringify(userObject)
 
 	localStorage.setItem(email, userObjectJSON);
+	logout();
 	relocateTo('registration', 'successfulRegistration');
 
 	return false;
